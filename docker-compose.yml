@@ -1,0 +1,22 @@
+version: '3.6'
+
+networks:
+  vulpecula-network:
+    driver: bridge
+
+services:
+  vulpecula-mongo:
+    image: bitnami/mongodb:latest
+    container_name: vulpecula-mongo
+    restart: always
+    environment:
+      - ALLOW_EMPTY_PASSWORD=no
+      - MONGODB_USERNAME=admin
+      - MONGODB_PASSWORD=admin
+      - MONGODB_DATABASE=db
+    ports:
+      - "27017:27017"
+    volumes:
+      - ./tmp/mongo:/bitnami/mongodb
+    networks:
+      - vulpecula-network

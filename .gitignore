@@ -1,0 +1,8 @@
+#Application
+.env
+tmp/*
+!tmp/.gitkeep
+
+# Yarn
+node_modules
+yarn-error.log
