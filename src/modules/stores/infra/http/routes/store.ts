@@ -51,7 +51,8 @@ storeRouter.post(
     const updateProductImage = new UpdateProductImageService();
 
     await updateProductImage.execute({
-      productId: String(req.params.id),
+      storeId: String(req.params.storeId),
+      productId: String(req.params.productId),
       imageUrl: req.file.filename,
     });
 
